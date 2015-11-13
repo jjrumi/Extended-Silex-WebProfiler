@@ -12,3 +12,6 @@ Register the service provider after the creation of your Silex App:
 ```
 $app->register(new RepoWebProfilerServiceProvider());
 ```
+
+# Screenshots
+![Profiler bar with git info](https://raw.githubusercontent.com/wiki/jjrumi/Extended-Silex-WebProfiler/debugbar.png "Profiler bar with git info")
