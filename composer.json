@@ -1,0 +1,21 @@
+{
+    "name": "jjrumi/extended-silex-web-profiler",
+    "description": "Useful addons for the Silex-WebProfiler",
+    "keywords": [ "profiler", "silex" ],
+    "homepage": "https://github.com/jjrumi/Extended-Silex-WebProfiler",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Luis J. Rumí",
+            "email": "jjrumi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "silex/silex": "~1.0",
+        "silex/web-profiler" : "~1.0"
+    },
+    "autoload": {
+        "psr-4": { "jjrumi\\SilexWebProfiler\\": "src/" }
+    }
+}

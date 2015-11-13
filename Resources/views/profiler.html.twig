@@ -1,0 +1,20 @@
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block toolbar %}
+    {# the web debug toolbar content #}
+    {% set icon %}
+        <img alt="Propel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAcCAYAAABsxO8nAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAAnlJREFUOBGNlc2LT2EUxx+vjcl4i5SMYmUiC5SXZGNnIRsJO8mfQJRhMVt/gJoZkawtWGDxK0rDxssC5W2hhMjLxIx3n8+9z7lzjd+dft/63HOec8899zznufOblFKaBu3UFG+XWxWZzt01MB/G4GG2FvsDHWkeWQPwGXxIhqEXVFNn/8VPkuzD90D/al4PYrtB1R+q+//cs5On0GcULYAWWHwtqBmlab46mx54D49y2kfsi+zPyrbexQ5iF+EmnIF1UOgG1+9wHBbCAfgEDjzmFB3tJxaz/I1v189gG6St8AQMvoOfYKE9oKLICvzH8AH2wlw4BjZhd4V2crVQcKQMF0Oemf31+f5QXocZMe6M1JvSpF/ZOjNlEYurH6VJq7COQHkYS2A03hZDjcIRt4izUM7C7+sgXIA7sAss3A+FNnGNh7SHy3DRkW6c2lL8S2BOcBq/KzrAn1I+ZNeO4ErOjK2eZz0eW8j3KhMdeGIWce2DvngDKAu/Bk+5al2/rpjLt3oQfzfEZ+Gt22CxxkJ22gUbc84c7BY4BIvAF9ndZfCEYwcphh0DbHHzOthRxMK6FX2LLAZVzXozi0j0Wwq/ybbIWQ2qKBLDjhPwQRWtl6vyOop5AJ7aOXgFFinmGYWWEVDuNfb7HP8s+OG5xa/gYF+CqoqUy5S24/iQ3fhHO579E9gmVTOpJ9xi4RuPgj+7++At3IXloGaD31TbAiYoOxkpvInLcI7Hx2eRKeUbvoDH2Jcz/aldmX077VinyLSr+9AP1/J6ENsNKg6gXDVce4gPgMdrQRmCXlAdFYkkt+g/SLflMft7PQbet3BHimKTk5vik/OK9V9PE51DvmqgnwAAAABJRU5ErkJggg==" />
+        <span class="sf-toolbar-status">{{ collector.getBranch() }}</span> at <span>{{ collector.getRevision() }}</span>
+    {% endset %}
+    {% set text %}
+        <div class="sf-toolbar-info-piece">
+            <b>Branch</b>
+            <span>{{ collector.getBranch() }}</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Revision</b>
+            <span>{{ collector.getRevision() }}</span>
+        </div>
+    {% endset %}
+    {% include '@WebProfiler/Profiler/toolbar_item.html.twig' with { 'link': profiler_url } %}
+{% endblock %}
