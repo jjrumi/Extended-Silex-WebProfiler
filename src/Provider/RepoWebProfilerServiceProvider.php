@@ -19,7 +19,9 @@ class RepoWebProfilerServiceProvider implements ServiceProviderInterface, Contro
             return new GitDataCollector();
         });
 
-        $app['data_collectors']['git'] = $this->gitDataCollector;
+        $data_collectors = $app['data_collectors'];
+        $data_collectors['git'] = $this->gitDataCollector;
+        $app['data_collectors'] = $data_collectors;
 
         $templates = $app['data_collector.templates'];
         $templates[] = array('git', '@GitWebProfiler/profiler.html.twig');
